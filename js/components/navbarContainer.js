@@ -35,6 +35,42 @@ $template.innerHTML = /*html */ `
             outline: none;
             padding: auto;
         }
+
+        li > form {
+            background-color: #feffff;
+            border-radius: 20px;
+            padding: 5px;
+        }
+
+        form > button {
+            border-radius: 100px;
+            outline: none;
+            cursor: pointer;
+            width: 70px;
+            height: 30px;
+            font-size: 16px;
+            background-color: #2b7a78;
+            color: #feffff;
+            border: none;
+        }
+
+        form > input {
+            font-size: 18px;
+            padding-right: 0.5rem;
+            text-decoration: none;
+        }
+
+        #get-started-btn {
+            cursor: pointer;
+            width: 70px;
+            height: 30px;
+            font-size: 16px;
+            background-color: #feffff;
+            color: #2b7a78;
+            border:none;
+            outline: none;
+            border-radius: 100px;
+        }
     </style>
     <nav id="page-nav" class="fixed-nav-bar">
         <ul>
@@ -42,22 +78,22 @@ $template.innerHTML = /*html */ `
             <li>
             <form>
                 <input type="text" placeholder="Write something ..." id="search-bar">
-                <button>Seatch</button>
+                <button>Search</button>
             </form>
             </li>
             <li>
-                <button>Get Started</button>
+                <button id="get-started-btn">Get Started</button>
             </li>
         </ul>
     </nav>
 `;
 
 export default class NavbarContainer extends HTMLElement {
-    constructor() {
-        super();
-        this.attachShadow({ mode: "open" });
-        this.shadowRoot.appendChild($template.content.cloneNode(true));
-    }
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.appendChild($template.content.cloneNode(true));
+  }
 }
 
 window.customElements.define("navbar-container", NavbarContainer);
