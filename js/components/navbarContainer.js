@@ -35,7 +35,7 @@ $template.innerHTML = /*html */ `
             text-shadow: 0 0 11px #17252a;
         }
         #input-bar {
-            width: 300px;
+            width: 40vh;
             height: 30px;
             border: none;
             border-radius: 20px;

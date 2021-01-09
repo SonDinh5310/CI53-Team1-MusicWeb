@@ -11,6 +11,17 @@
             href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
             rel="stylesheet"
         />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"
+            integrity="sha512-RWosNnDNw8FxHibJqdFRySIswOUgYhFxnmYO3fp+BgCU7gfo4z0oS7mYFBvaa8qu+axY39BmQOrhW3Tp70XbaQ=="
+            crossorigin="anonymous"
+        ></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"
+            integrity="sha512-CIYsJUa3pr1eoXlZFroEI0mq0UIMUqNouNinjpCkSWo3Bx5NRlQ0OuC6DtEB/bDqUWnzXc1gs2X/g52l36N5iw=="
+            crossorigin="anonymous"
+        />
         <!-- *Start of Firebase script* -->
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
@@ -45,57 +56,32 @@
         <!-- *End of NavigoJS* -->
     </head>
     <body>
-        <navbar-container></navbar-container>
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-            excepturi nisi similique, dolor tempore mollitia eaque molestiae
-            perspiciatis aliquam itaque explicabo aut distinctio exercitationem
-            ducimus dicta aliquid dolores consequatur neque. Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Omnis quia fugiat suscipit
-            natus perferendis. Earum quam sint illum aliquid eveniet, possimus,
-            similique eaque asperiores excepturi harum rerum provident
-            accusantium iusto?
-        </p>
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-            excepturi nisi similique, dolor tempore mollitia eaque molestiae
-            perspiciatis aliquam itaque explicabo aut distinctio exercitationem
-            ducimus dicta aliquid dolores consequatur neque. Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Omnis quia fugiat suscipit
-            natus perferendis. Earum quam sint illum aliquid eveniet, possimus,
-            similique eaque asperiores excepturi harum rerum provident
-            accusantium iusto?
-        </p>
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-            excepturi nisi similique, dolor tempore mollitia eaque molestiae
-            perspiciatis aliquam itaque explicabo aut distinctio exercitationem
-            ducimus dicta aliquid dolores consequatur neque. Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Omnis quia fugiat suscipit
-            natus perferendis. Earum quam sint illum aliquid eveniet, possimus,
-            similique eaque asperiores excepturi harum rerum provident
-            accusantium iusto?
-        </p>
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-            excepturi nisi similique, dolor tempore mollitia eaque molestiae
-            perspiciatis aliquam itaque explicabo aut distinctio exercitationem
-            ducimus dicta aliquid dolores consequatur neque. Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Omnis quia fugiat suscipit
-            natus perferendis. Earum quam sint illum aliquid eveniet, possimus,
-            similique eaque asperiores excepturi harum rerum provident
-            accusantium iusto?
-        </p>
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-            excepturi nisi similique, dolor tempore mollitia eaque molestiae
-            perspiciatis aliquam itaque explicabo aut distinctio exercitationem
-            ducimus dicta aliquid dolores consequatur neque. Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Omnis quia fugiat suscipit
-            natus perferendis. Earum quam sint illum aliquid eveniet, possimus,
-            similique eaque asperiores excepturi harum rerum provident
-            accusantium iusto?
-        </p>
+        <!-- <landing-page></landing-page> -->
+        <!-- <style>
+            #aplayer {
+                position: fixed;
+                z-index: 9999;
+                left: 0;
+                bottom: 0;
+                margin: 0;
+                height: auto;
+                width: 100%;
+            }
+        </style>
+        <div id="aplayer"></div> -->
+        <!-- <script>
+            const ap = new APlayer({
+                container: document.getElementById("aplayer"),
+                audio: [
+                    {
+                        name: "name",
+                        artist: "artist",
+                        url: "url.mp3",
+                        cover: "cover.jpg",
+                    },
+                ],
+            });
+        </script> -->
         <script src="./js/app.js" type="module"></script>
     </body>
 </html>
