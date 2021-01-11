@@ -9,9 +9,14 @@ $template.innerHTML = /*html */ `
             list-style: none;
             display: flex;
             flex-direction: row;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
+            max-width: 1168px;
+            margin: auto;
+            padding: inherit;
+            
         }
+
         #page-nav {
             background-color: #2b7a78;
         }
@@ -21,7 +26,7 @@ $template.innerHTML = /*html */ `
             left: 0px;
             z-index: 9999;
             width: 100%;
-            height: 80px;
+            height: 60px;
         }
         #page-logo {
             color: #feffff;
@@ -35,7 +40,7 @@ $template.innerHTML = /*html */ `
             text-shadow: 0 0 11px #17252a;
         }
         #input-bar {
-            width: 40vh;
+            width: 30vh;
             height: 30px;
             border: none;
             border-radius: 20px;

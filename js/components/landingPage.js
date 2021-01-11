@@ -4,7 +4,15 @@ import MusicPlayerContainer from "./musicPlayerContainer.js";
 const $template = document.createElement("template");
 
 $template.innerHTML = /*html */ `
-  <div>
+  <style>
+    #landing-page-container {
+      display: flex;
+      max-width: 1200px;
+      margin: auto;
+    }
+  </style>
+  <div id="landing-page-container">
+    <navbar-container></navbar-container>
     
     <music-player-container></music-player-container>
   </div>
