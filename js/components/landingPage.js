@@ -1,10 +1,12 @@
 import NavbarContainer from "./navbarContainer.js";
 import MusicPlayerContainer from "./musicPlayerContainer.js";
+
 const $template = document.createElement("template");
 
 $template.innerHTML = /*html */ `
   <div>
-    <navbar-container></navbar-container>
+    
+    <music-player-container></music-player-container>
   </div>
 `;
 

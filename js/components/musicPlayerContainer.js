@@ -1,6 +1,3 @@
-import "aplayer/dist/APlayer.min.css";
-import APlayer from "aplayer";
-
 const $template = document.createElement("template");
 $template.innerHTML = /*html */ `
         <style>
@@ -15,6 +12,19 @@ $template.innerHTML = /*html */ `
             }
         </style>
         <div id="aplayer"></div>
+        <script>
+            const ap = new APlayer({
+            container: document.getElementById("aplayer"),
+            audio: [
+                {
+                name: "name",
+                artist: "artist",
+                url: "url.mp3",
+                cover: "cover.jpg",
+                },
+            ],
+            });
+        </script>
 `;
 
 export default class MusicPlayerContainer extends HTMLElement {
@@ -26,15 +36,3 @@ export default class MusicPlayerContainer extends HTMLElement {
 }
 
 window.customElements.define("music-player-container", MusicPlayerContainer);
-
-const ap = new APlayer({
-    container: document.getElementById("aplayer"),
-    audio: [
-        {
-            name: "name",
-            artist: "artist",
-            url: "url.mp3",
-            cover: "cover.jpg",
-        },
-    ],
-});
