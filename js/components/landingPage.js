@@ -1,8 +1,9 @@
 import NavbarContainer from "./navbarContainer.js";
 import MusicPlayerContainer from "./musicPlayerContainer.js";
+import ItemList from "./itemListContainer.js";
+import data from "./fakeData.js";
 
 const $template = document.createElement("template");
-
 $template.innerHTML = /*html */ `
   <style>
     #landing-page-container {
@@ -13,7 +14,6 @@ $template.innerHTML = /*html */ `
   </style>
   <div id="landing-page-container">
     <navbar-container></navbar-container>
-    
     <music-player-container></music-player-container>
   </div>
 `;

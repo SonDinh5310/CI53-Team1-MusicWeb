@@ -1,5 +1,6 @@
-const $template = document.createElement("template");
+import PopupForm from "./popupForm.js";
 
+const $template = document.createElement("template");
 $template.innerHTML = /*html */ `
     <style>
         * {
@@ -11,12 +12,11 @@ $template.innerHTML = /*html */ `
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            max-width: 1168px;
+            max-width: 1080px;
             margin: auto;
             padding: inherit;
             
         }
-
         #page-nav {
             background-color: #2b7a78;
         }
@@ -40,7 +40,7 @@ $template.innerHTML = /*html */ `
             text-shadow: 0 0 11px #17252a;
         }
         #input-bar {
-            width: 30vh;
+            width: 40vh;
             height: 30px;
             border: none;
             border-radius: 20px;
@@ -84,6 +84,9 @@ $template.innerHTML = /*html */ `
                 <input type="text" placeholder="Write something ..." id="input-bar">
                 <button>Search</button>
             </form>
+            </li>
+            <li>
+                <popup-form></popup-form>
             </li>
             <li>
                 <button id="get-started-btn">Get Started</button>
