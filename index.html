@@ -1,105 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Music Camp</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Camp</title>
 
-        <link rel="stylesheet" href="./css/landingPage.css" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
-            rel="stylesheet"
-        />
-        <script
-            src="https://kit.fontawesome.com/72ae42ecde.js"
-            crossorigin="anonymous"
-        ></script>
-        <!-- *Start of Firebase script* -->
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="./css/landingPage.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"
+      integrity="sha512-RWosNnDNw8FxHibJqdFRySIswOUgYhFxnmYO3fp+BgCU7gfo4z0oS7mYFBvaa8qu+axY39BmQOrhW3Tp70XbaQ=="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"
+      integrity="sha512-CIYsJUa3pr1eoXlZFroEI0mq0UIMUqNouNinjpCkSWo3Bx5NRlQ0OuC6DtEB/bDqUWnzXc1gs2X/g52l36N5iw=="
+      crossorigin="anonymous"
+    />
+    <!-- *Start of Firebase script* -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-storage.js"></script>
 
-        <!-- TODO: Add SDKs for Firebase products that you want to use
+    <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 
-        <script>
-            // Your web app's Firebase configuration
-            var firebaseConfig = {
-                apiKey: "AIzaSyBv-l-m49NPhe_08gZEr8_wrQlX3HNSsJg",
-                authDomain: "music-camp-1325d.firebaseapp.com",
-                projectId: "music-camp-1325d",
-                storageBucket: "music-camp-1325d.appspot.com",
-                messagingSenderId: "393730234731",
-                appId: "1:393730234731:web:f0a4e1e585a406fe3e542e",
-            };
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
-        </script>
-        <!-- *End of Firebase script* -->
-        <!-- *Start of CryptoJS* -->
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"
-            integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A=="
-            crossorigin="anonymous"
-        ></script>
-        <!-- *End of CryptoJS* -->
-        <!-- *Start of NavigoJS* -->
-        <script src="//unpkg.com/navigo@6"></script>
-        <!-- *End of NavigoJS* -->
-    </head>
-    <body>
-        <navbar-container></navbar-container>
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-            excepturi nisi similique, dolor tempore mollitia eaque molestiae
-            perspiciatis aliquam itaque explicabo aut distinctio exercitationem
-            ducimus dicta aliquid dolores consequatur neque. Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Omnis quia fugiat suscipit
-            natus perferendis. Earum quam sint illum aliquid eveniet, possimus,
-            similique eaque asperiores excepturi harum rerum provident
-            accusantium iusto?
-        </p>
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-            excepturi nisi similique, dolor tempore mollitia eaque molestiae
-            perspiciatis aliquam itaque explicabo aut distinctio exercitationem
-            ducimus dicta aliquid dolores consequatur neque. Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Omnis quia fugiat suscipit
-            natus perferendis. Earum quam sint illum aliquid eveniet, possimus,
-            similique eaque asperiores excepturi harum rerum provident
-            accusantium iusto?
-        </p>
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-            excepturi nisi similique, dolor tempore mollitia eaque molestiae
-            perspiciatis aliquam itaque explicabo aut distinctio exercitationem
-            ducimus dicta aliquid dolores consequatur neque. Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Omnis quia fugiat suscipit
-            natus perferendis. Earum quam sint illum aliquid eveniet, possimus,
-            similique eaque asperiores excepturi harum rerum provident
-            accusantium iusto?
-        </p>
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-            excepturi nisi similique, dolor tempore mollitia eaque molestiae
-            perspiciatis aliquam itaque explicabo aut distinctio exercitationem
-            ducimus dicta aliquid dolores consequatur neque. Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Omnis quia fugiat suscipit
-            natus perferendis. Earum quam sint illum aliquid eveniet, possimus,
-            similique eaque asperiores excepturi harum rerum provident
-            accusantium iusto?
-        </p>
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum
-            excepturi nisi similique, dolor tempore mollitia eaque molestiae
-            perspiciatis aliquam itaque explicabo aut distinctio exercitationem
-            ducimus dicta aliquid dolores consequatur neque. Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Omnis quia fugiat suscipit
-            natus perferendis. Earum quam sint illum aliquid eveniet, possimus,
-            similique eaque asperiores excepturi harum rerum provident
-            accusantium iusto?
-        </p>
-        <script src="./js/app.js" type="module"></script>
-    </body>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBv-l-m49NPhe_08gZEr8_wrQlX3HNSsJg",
+        authDomain: "music-camp-1325d.firebaseapp.com",
+        projectId: "music-camp-1325d",
+        storageBucket: "music-camp-1325d.appspot.com",
+        messagingSenderId: "393730234731",
+        appId: "1:393730234731:web:f0a4e1e585a406fe3e542e",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <!-- *End of Firebase script* -->
+    <!-- *Start of CryptoJS* -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"
+      integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- *End of CryptoJS* -->
+    <!-- *Start of NavigoJS* -->
+    <script src="//unpkg.com/navigo@6"></script>
+    <!-- *End of NavigoJS* -->
+  </head>
+  <body>
+    <landing-page></landing-page>
+    <script src="./js/app.js" type="module"></script>
+  </body>
 </html>
