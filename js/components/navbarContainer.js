@@ -1,6 +1,7 @@
 import UploadForm from "./uploadForm.js";
 import GetStartedForm from "./getStartedForm.js";
 import { getCurrentUser, removeClass } from "../utils.js";
+import UserMenu from "./userMenu.js";
 
 const $template = document.createElement("template");
 $template.innerHTML = /*html */ `
@@ -80,6 +81,10 @@ $template.innerHTML = /*html */ `
         .d-none {
             display: none;
         }
+        #auth-container {
+            display: flex;
+            justify-content: space-between;
+        }
     </style>
     <nav id="page-nav" class="fixed-nav-bar">
         <ul>
@@ -90,39 +95,42 @@ $template.innerHTML = /*html */ `
                 <button>Search</button>
             </form>
             </li>
-            <li class="d-none">
-                <upload-form></upload-form>
-            </li>
-
             <li id="un-auth">
                 <get-started-form></get-started-form>
             </li>
 
             <li id="auth" class="d-none">
-                welcome
+             <div id="auth-container">
+                <upload-form></upload-form>
+                <div id="root"></div>
+            </div>
             </li>
         </ul>
     </nav>
 `;
 
 export default class NavbarContainer extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
-    this.shadowRoot.appendChild($template.content.cloneNode(true));
+    constructor() {
+        super();
+        this.attachShadow({ mode: "open" });
+        this.shadowRoot.appendChild($template.content.cloneNode(true));
 
-    this.$unAuth = this.shadowRoot.getElementById("un-auth");
-    this.$auth = this.shadowRoot.getElementById("auth");
-  }
-
-  connectedCallback() {
-    let currentUser = getCurrentUser();
-    if (!currentUser) {
-      return;
+        this.$unAuth = this.shadowRoot.getElementById("un-auth");
+        this.$auth = this.shadowRoot.getElementById("auth");
+        this.$root = this.shadowRoot.getElementById("root");
     }
-    this.$unAuth.className = "d-none";
-    this.$auth.className = "";
-  }
+
+    connectedCallback() {
+        let currentUser = getCurrentUser();
+        if (!currentUser) {
+            return;
+        }
+        this.$unAuth.className = "d-none";
+        this.$auth.className = "";
+
+        let $userMenu = new UserMenu();
+        this.$root.appendChild($userMenu);
+    }
 }
 
 window.customElements.define("navbar-container", NavbarContainer);

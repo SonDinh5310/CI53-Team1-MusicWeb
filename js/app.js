@@ -6,3 +6,4 @@ import data from "./components/fakeData.js";
 import UploadForm from "./components/uploadForm.js";
 import LoginForm from "./components/loginForm.js";
 import RegisterForm from "./components/registerForm.js";
+import UserMenu from "./components/userMenu.js";

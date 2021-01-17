@@ -20,18 +20,18 @@ $template.innerHTML = /*html */ `
 `;
 
 export default class LandingPage extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
-    this.shadowRoot.appendChild($template.content.cloneNode(true));
+    constructor() {
+        super();
+        this.attachShadow({ mode: "open" });
+        this.shadowRoot.appendChild($template.content.cloneNode(true));
 
-    this.$root = this.shadowRoot.getElementById("root");
-  }
+        this.$root = this.shadowRoot.getElementById("root");
+    }
 
-  connectedCallback() {
-    let $itemList = new ItemList(data);
-    this.$root.appendChild($itemList);
-  }
+    connectedCallback() {
+        let $itemList = new ItemList(data);
+        this.$root.appendChild($itemList);
+    }
 }
 
 window.customElements.define("landing-page", LandingPage);
