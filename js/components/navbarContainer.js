@@ -43,7 +43,7 @@ $template.innerHTML = /*html */ `
             text-shadow: 0 0 11px #17252a;
         }
         #input-bar {
-            width: 40vh;
+            width: 30vh;
             height: 30px;
             border: none;
             border-radius: 20px;
@@ -84,6 +84,9 @@ $template.innerHTML = /*html */ `
         #auth-container {
             display: flex;
             justify-content: space-between;
+        }
+        #auth {
+            width: 25%;
         }
     </style>
     <nav id="page-nav" class="fixed-nav-bar">
