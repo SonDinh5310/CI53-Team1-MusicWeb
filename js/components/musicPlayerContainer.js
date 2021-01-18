@@ -9,6 +9,7 @@ $template.innerHTML = /*html */ `
                 bottom: 0;
                 margin: auto;
                 width: 100%;
+                border-radius: 20px 20px 0 0;
             }
             #player-container {
                 background-color: transparent;
@@ -28,27 +29,27 @@ $template.innerHTML = /*html */ `
 `;
 
 export default class MusicPlayerContainer extends HTMLElement {
-    constructor() {
-        super();
-        this.attachShadow({ mode: "open" });
-        this.shadowRoot.appendChild($template.content.cloneNode(true));
-        this.$aplayer = this.shadowRoot.getElementById("aplayer");
-    }
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.appendChild($template.content.cloneNode(true));
+    this.$aplayer = this.shadowRoot.getElementById("aplayer");
+  }
 
-    connectedCallback() {
-        const ap = new APlayer({
-            container: this.$aplayer,
-            // theme: "#2b7a78",
-            audio: [
-                {
-                    name: "name",
-                    artist: "artist",
-                    url: "url.mp3",
-                    cover: "cover.jpg",
-                },
-            ],
-        });
-    }
+  connectedCallback() {
+    const ap = new APlayer({
+      container: this.$aplayer,
+      // theme: "#2b7a78",
+      audio: [
+        {
+          name: "name",
+          artist: "artist",
+          url: "url.mp3",
+          cover: "cover.jpg",
+        },
+      ],
+    });
+  }
 }
 
 window.customElements.define("music-player-container", MusicPlayerContainer);
