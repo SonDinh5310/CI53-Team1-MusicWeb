@@ -36,10 +36,9 @@ $template.innerHTML = /*html */ `
   position: absolute;
   background-color: #feffff;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px #17252a;
   z-index: 1;
   border-radius: 20px;
-  width: 100%;
 }
 
 /* Links inside the dropdown */
@@ -49,13 +48,14 @@ $template.innerHTML = /*html */ `
   text-decoration: none;
   display: block;
   font-size: 12px;
-  border-radius: 20px;
   cursor: pointer;
+
 }
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
   background-color: #ddd;
+  border-radius: 20px;
 }
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
