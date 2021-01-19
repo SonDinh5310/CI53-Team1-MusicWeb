@@ -1,7 +1,6 @@
 import NavbarContainer from "./navbarContainer.js";
 import MusicPlayerContainer from "./musicPlayerContainer.js";
 import ItemList from "./itemListContainer.js";
-import data from "./fakeData.js";
 
 const $template = document.createElement("template");
 $template.innerHTML = /*html */ `
@@ -26,10 +25,22 @@ export default class LandingPage extends HTMLElement {
         this.shadowRoot.appendChild($template.content.cloneNode(true));
 
         this.$root = this.shadowRoot.getElementById("root");
+        // this.$aplayer = this.shadowRoot.getElementById("aplayer");
+        this.$musicPlayer = this.shadowRoot.querySelector(
+            "music-player-container"
+        );
     }
 
     connectedCallback() {
-        let $itemList = new ItemList(data);
+        document.addEventListener("play-music-event", (event) => {
+            console.log(event.detail);
+            this.$musicPlayer.setAttribute("url", event.detail.source);
+            this.$musicPlayer.setAttribute("cover", event.detail.image);
+            this.$musicPlayer.setAttribute("name", event.detail.name);
+            this.$musicPlayer.setAttribute("artist", event.detail.artist);
+        });
+
+        let $itemList = new ItemList();
         this.$root.appendChild($itemList);
     }
 }

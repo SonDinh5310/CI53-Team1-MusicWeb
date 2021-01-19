@@ -29,27 +29,42 @@ $template.innerHTML = /*html */ `
 `;
 
 export default class MusicPlayerContainer extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: "open" });
-    this.shadowRoot.appendChild($template.content.cloneNode(true));
-    this.$aplayer = this.shadowRoot.getElementById("aplayer");
-  }
+    constructor() {
+        super();
+        this.attachShadow({ mode: "open" });
+        this.shadowRoot.appendChild($template.content.cloneNode(true));
+        this.$aplayer = this.shadowRoot.getElementById("aplayer");
+    }
 
-  connectedCallback() {
-    const ap = new APlayer({
-      container: this.$aplayer,
-      // theme: "#2b7a78",
-      audio: [
-        {
-          name: "name",
-          artist: "artist",
-          url: "url.mp3",
-          cover: "cover.jpg",
-        },
-      ],
-    });
-  }
+    static get observedAttributes() {
+        return ["url", "cover", "name", "artist"];
+    }
+
+    connectedCallback() {
+        this.ap = new APlayer({
+            container: this.$aplayer,
+            // theme: "#2b7a78",
+            listFolded: true,
+            // audio: [
+            //     {
+            //         name: "name",
+            //         artist: "artist",
+            //         url: "url.mp3",
+            //         cover: "cover.jpg",
+            //     },
+            // ],
+        });
+    }
+
+    attributeChangedCallback(attrName, oldValue, newValue) {
+        // console.log(typeof newValue);
+        if (attrName == "url") {
+            this.ap.addAudio({
+                url: newValue,
+            });
+        }
+        this.ap.play();
+    }
 }
 
 window.customElements.define("music-player-container", MusicPlayerContainer);

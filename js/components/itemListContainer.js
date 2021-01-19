@@ -1,4 +1,5 @@
-import data from "./fakeData.js";
+import { getCurrentUser, getDatafromDocs } from "../utils.js";
+// import data from "./fakeData.js";
 import ItemContainer from "./itemContainer.js";
 
 const $template = document.createElement("template");
@@ -38,29 +39,29 @@ export default class ItemList extends HTMLElement {
         this.attachShadow({ mode: "open" });
         this.shadowRoot.appendChild($template.content.cloneNode(true));
         this.$itemList = this.shadowRoot.getElementById("item-list");
-        this.setAttribute("data", JSON.stringify(data));
     }
 
+    async connectedCallback() {
+        let songsData = await this.loadSongs();
+        this.$itemList.setAttribute("data", JSON.stringify(songsData));
+    }
     static get observedAttributes() {
         return ["data"];
     }
-    attributeChangedCallback(attrName, oldValue, newValue) {
-        if (attrName == "data") {
-            console.log("this is ===>" + newValue);
-            let data = JSON.parse(newValue);
-            console.log(data);
-            for (let item of data) {
-                // console.log(item);
-                let $itemContainer = new ItemContainer(
-                    item.image,
-                    item.songName,
-                    item.artist
-                );
-                $itemContainer.setAttribute("image", item.image);
-                $itemContainer.setAttribute("song-name", item.songName);
-                $itemContainer.setAttribute("artist", item.artist);
-                this.$itemList.appendChild($itemContainer);
-            }
+
+    async loadSongs() {
+        let currentUser = getCurrentUser();
+        let result = await firebase.firestore().collection("songsData").get();
+        // console.log(result);
+        let existSongs = getDatafromDocs(result.docs);
+        for (let existSong of existSongs) {
+            let $itemContainer = new ItemContainer(
+                existSong.coverImage,
+                existSong.songName,
+                existSong.artist,
+                existSong.file
+            );
+            this.$itemList.appendChild($itemContainer);
         }
     }
 }
